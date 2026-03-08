@@ -1,0 +1,122 @@
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a1a1a;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Map Background Animation */
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.map-grid {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    transform: perspective(500px) rotateX(60deg);
+    animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+    0% { transform: perspective(500px) rotateX(60deg) translateY(0); }
+    100% { transform: perspective(500px) rotateX(60deg) translateY(50px); }
+}
+
+/* Speed Display */
+.speed-value {
+    font-size: 6rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Metrics Grid */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.metric {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+.metric.active {
+    border-color: #ff6600;
+    box-shadow: 0 0 20px rgba(255, 102, 0, 0.3);
+}
+
+/* GO Button */
+.go-button {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff6600 0%, #ff8800 100%);
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 30px rgba(255, 102, 0, 0.5);
+    transition: all 0.3s;
+}
+
+.go-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px rgba(255, 102, 0, 0.7);
+}
+
+/* Progress Bar */
+.progress-container {
+    width: 100%;
+    max-width: 600px;
+    height: 6px;
+    background-color: #333;
+    border-radius: 3px;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #ff6600, #ff8800);
+    width: 0%;
+    transition: width 0.3s;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .speed-value {
+        font-size: 4rem;
+    }
+}

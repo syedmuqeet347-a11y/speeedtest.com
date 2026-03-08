@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Test - Internet Speed Test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">Speed<span>Test</span></div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Map Background -->
+        <div class="map-container">
+            <div class="map-grid"></div>
+            <div class="map-pin"></div>
+        </div>
+
+        <!-- Speed Display -->
+        <div class="speed-display">
+            <div class="speed-value" id="main-speed">0</div>
+            <div class="speed-unit">Mbps</div>
+        </div>
+
+        <!-- Metrics Grid -->
+        <div class="metrics-grid">
+            <div class="metric" id="ping-metric">
+                <div class="metric-icon">📡</div>
+                <div class="metric-value" id="ping-value">--</div>
+                <div class="metric-label">Ping</div>
+            </div>
+            <div class="metric" id="download-metric">
+                <div class="metric-icon">⬇️</div>
+                <div class="metric-value" id="download-value">--</div>
+                <div class="metric-label">Download</div>
+            </div>
+            <div class="metric" id="upload-metric">
+                <div class="metric-icon">⬆️</div>
+                <div class="metric-value" id="upload-value">--</div>
+                <div class="metric-label">Upload</div>
+            </div>
+        </div>
+
+        <!-- GO Button -->
+        <button class="go-button" id="go-btn">GO</button>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+
+        <!-- Status Text -->
+        <div class="status-text" id="status-text">Click GO to start</div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
